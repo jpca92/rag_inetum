@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 
 from app.config import settings
+from app.conversation.analytics import ConversationAnalytics
 from app.conversation.repository import ConversationRepository
 from app.patterns.factories import EmbeddingFactory
 from app.rag.chain import get_rag_facade
@@ -79,4 +80,29 @@ def session_messages(session_id: str):
     return {
         "session_id": session_id,
         "messages": repository.get_session_messages(session_id),
+    }
+
+
+@app.get("/analytics/summary")
+def analytics_summary():
+    analytics = ConversationAnalytics()
+
+    return analytics.summary()
+
+
+@app.get("/analytics/questions")
+def analytics_questions():
+    analytics = ConversationAnalytics()
+
+    return {
+        "top_questions": analytics.top_questions(),
+    }
+
+
+@app.get("/analytics/sources")
+def analytics_sources():
+    analytics = ConversationAnalytics()
+
+    return {
+        "top_sources": analytics.top_sources(),
     }
