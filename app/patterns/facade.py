@@ -66,14 +66,15 @@ class RAGFacade:
         for index, document in enumerate(documents, start=1):
             title = document.metadata.get("title", "Sin título")
             url = document.metadata.get("url", "")
+            content = document.page_content[:1200]
 
             blocks.append(
                 f"""
-[Fuente {index}]
-Título: {title}
-URL: {url}
-Contenido: {document.page_content}
-""".strip()
+    [Fuente {index}]
+    Título: {title}
+    URL: {url}
+    Contenido: {content}
+    """.strip()
             )
 
         return "\n\n".join(blocks)
