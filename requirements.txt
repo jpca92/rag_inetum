@@ -1,4 +1,4 @@
-fastapi==0.115.6
+fastapi==0.115.9
 uvicorn[standard]==0.34.0
 pydantic-settings==2.7.1
 python-dotenv==1.0.1
@@ -7,10 +7,11 @@ requests==2.32.3
 beautifulsoup4==4.12.3
 trafilatura==2.0.0
 
-langchain==0.3.14
-langchain-community==0.3.14
-langchain-chroma==0.2.0
-chromadb==0.6.3
+langchain==0.3.25
+langchain-community==0.3.24
+langchain-chroma==0.2.4
+langchain-huggingface==0.2.0
+chromadb==1.0.12
 
 sentence-transformers==3.3.1
 transformers==4.48.0
