@@ -462,28 +462,7 @@ python scripts/reset_data.py
 
 ---
 
-## 20. Progresión de commits sugerida
-
-```text
-docs: add initial project description and gitignore
-chore: add environment, dependencies and docker setup
-chore: add application package structure and settings
-feat: add local jsonl storage utilities
-feat: add cleaning strategy pattern
-feat: implement website scraper
-feat: add embedding factory and vector indexing
-feat: implement local LLM client, retriever and optional reranker
-feat: persist conversation history with repository pattern
-feat: add RAG facade and chain composition
-feat: expose FastAPI endpoints
-feat: add conversation analytics
-feat: add Streamlit chat and analytics interface
-chore: add utility script, tests and final documentation
-```
-
----
-
-## 21. Supuestos asumidos
+## 20. Supuestos asumidos
 
 - El sitio objetivo es `https://www.bbva.com.co/`.
 - El sistema se ejecuta completamente en local mediante Docker Compose.
