@@ -7,6 +7,12 @@ from app.config import settings
 class HuggingFaceLocalLLM:
     def __init__(self, model_name: str):
         self.model_name = model_name
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        gpu_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "N/A"
+
+        print(f"[LLM] Device: {device}")
+        print(f"[LLM] GPU: {gpu_name}")
+        print(f"[LLM] Model: {self.model_name}")
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
