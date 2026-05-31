@@ -140,8 +140,8 @@ No se requieren API keys ni servicios pagos.
 Clonar el repositorio:
 
 ```bash
-git clone <repo-url>
-cd rag-banking-assistant
+git clone https://github.com/jpca92/rag_inetum.git
+cd rag_inetum
 ```
 
 Crear el archivo `.env` a partir del archivo de ejemplo:
@@ -162,10 +162,11 @@ SCRAPER_MAX_PAGES=25
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 LLM_MODEL=Qwen/Qwen2.5-1.5B-Instruct
 
-MEMORY_N_MESSAGES=6
 CHUNK_SIZE=800
 CHUNK_OVERLAP=120
-TOP_K=8
+TOP_K=5
+RERANK_TOP_K=3
+MEMORY_N_MESSAGES=4
 
 ENABLE_RERANKER=false
 ```
@@ -470,3 +471,16 @@ python scripts/reset_data.py
 - El scraping se limita a un número configurable de páginas para evitar sobrecargar el sitio.
 - La interfaz prioriza funcionalidad y claridad sobre diseño visual avanzado.
 - El historial se persiste en SQLite por simplicidad y reproducibilidad local.
+
+---
+
+## 21. Demo del proyecto
+
+Haz clic en la imagen para ver una demostración del sistema RAG funcionando con scraping, indexación, chat conversacional, historial por sesión y analítica de conversaciones.
+
+[![Demo del RAG Banking Assistant](https://img.youtube.com/vi/2izuk7i2700/hqdefault.jpg)](https://youtu.be/2izuk7i2700)
+
+Enlace directo:
+
+https://youtu.be/2izuk7i2700
+```
